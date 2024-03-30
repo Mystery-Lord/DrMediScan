@@ -1,1 +1,1 @@
-Try tobook an appointment!
+Try to book an appointment!
