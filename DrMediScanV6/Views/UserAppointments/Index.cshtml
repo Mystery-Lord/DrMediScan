@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using DrMediScanV6.Models.Data
+@model IEnumerable<Appointment>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+<div class="container mt-4">
+    <h2 class="mb-2">Current Appointments</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Clinic Name</th>
+                        <th>Patient Name</th>
+                        <th>Appointment Time</th>
+                        <th>Phone Number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appointment in Model)
+                    {
+                        <tr>
+                            <td>@appointment.ClinicName</td>
+                            <td>@($"{appointment.PatientFirstName} {appointment.PatientLastName}")</td>
+                            <td>@appointment.AppointmentTime</td>
+                            <td>@appointment.PatientPhoneNo</td>
+                            <td>
+                                <form asp-action="Index" asp-route-id="@appointment.Id" method="post" onsubmit="return confirm('Are you sure you want to cancel this appointment?');" style="display: inline-block;">
+                                    <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="justify-content-center text-center mt-8">
+                <div>
+                    <a asp-action="ClinicChoose" asp-controller="BookAppointment" class="btn btn-primary mb-3">Book New Appointment</a>
+                </div>
+                <div>
+                    <a asp-action="HistoryAppointments" asp-controller="UserAppointments" class="btn btn-secondary">View History Appointments</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

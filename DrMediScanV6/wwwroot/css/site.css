@@ -1,0 +1,109 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh / 2);
+    background: url('../Images/banner_image.jpg') no-repeat top center;
+    background-size: cover;
+    color: burlywood;
+    font-size: large;
+    border-radius: 12px;
+}
+
+.larger_header {
+    font-size: 3rem;
+}
+
+.medium_header {
+    font-size: 2rem;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    color: blanchedalmond;
+    border-radius: 12px;
+    margin-top:1rem;
+}
+
+.subSection1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+    height: calc(100vh / 3);
+    background: url('../Images/section1_Clinic.jpg') no-repeat top center;
+    background-size: cover;
+    border-radius: 12px;
+    margin-right: 1rem;
+    transition: ease-in-out 0.3s
+}
+.subSection1:hover {
+    transform: scale(1.05);
+}
+
+.subSection2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+    height: calc(100vh / 3);
+    background: url('../Images/section2_Professions.jpg') no-repeat top center;
+    background-size: cover;
+    border-radius: 12px;
+    transition: ease-in-out 0.3s
+}
+
+.subSection2:hover {
+    transform: scale(1.05);
+}
+
+.subSection3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    width: 33%;
+    height: calc(100vh / 3);
+    background: url('../Images/section3_MRI.jpg') no-repeat top center;
+    background-size: cover;
+    border-radius: 12px;
+    margin-right: 1rem;
+    transition: ease-in-out 0.3s
+}
+
+.subSection3:hover {
+    transform: scale(1.05);
+}
+
+
